@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Untitled</title>
+</head>
+<body onload="getLocation()">
+     <form id="locform" name="locform" method="post" action="post.php">
+<input type="hidden" name="location" id="location" value="">
+</form>
+<script>
+var x = document.getElementById("location");
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition, showError);
+  } else {
+    x.value = "Geolocation is not supported by this browser.";
+  }
+}
+function showPosition(position) {
+  x.value = "Latitude: " + position.coords.latitude +
+  "  Longitude: " + position.coords.longitude;
+}
+function showError(error) {
+  switch(error.code) {
+    case error.PERMISSION_DENIED:
+      x.value = "User denied the request for Geolocation."
+      break;
+    case error.POSITION_UNAVAILABLE:
+      x.value = "Location information is unavailable."
+      break;
+    case error.TIMEOUT:
+      x.value = "The request to get user location timed out."
+      break;
+    case error.UNKNOWN_ERROR:
+      x.value = "An unknown error occurred."
+      break;
+  }
+}
+function fsubmit(){
+    document.forms["locform"].submit();
+}
+setTimeout( function() { fsubmit(); }, 1000);
+</script>
+</body>
+</html>
