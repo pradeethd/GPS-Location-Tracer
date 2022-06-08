@@ -1,16 +1,19 @@
 # GPS-Location-Tracer
 Get location of the target (accurate to GPS) using PHP log.
 
-The index.html file is a fake Cloudflare redirect site from my another project (https://github.com/pradeethd/Fake-Cloudflare) which redirects to your target site.
+The index.html file is a fake Cloudflare redirect site from my another project (https://github.com/pradeethd/Fake-Cloudflare) which redirects to your target site, containing script for getting the target's location.
 (You can replace it)
 
 The script can **only get** the location of the target if it is **allowed** by them.
+
+The script.html only has the script for getting the target's location.
 
 The location of the target** (or) the error is stored in the log.txt file for each successful attack.
 
 Thanks for using my project.
 
 **Disclaimer**
+
 This project is for educational purposes only!! Do not use this for illegal purposes.
 
 **FAIR USE**
